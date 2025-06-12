@@ -5,6 +5,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
+from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 import joblib
 
@@ -35,7 +36,8 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 models = {
     "Logistic Regression": LogisticRegression(),
     "Random Forest": RandomForestClassifier(),
-    "SVM": SVC(probability=True)
+    "SVM": SVC(probability=True),
+    "Naive Bayes": GaussianNB()  # Added Naive Bayes model
 }
 
 accuracies = {}
